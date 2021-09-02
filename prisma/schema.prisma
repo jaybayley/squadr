@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// TODO: Automate switching during build
+
+// Local SQLite
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// SQL/Cloud SQL
+// datasource db {
+//   provider = "mysql"
+//   url      = "mysql://USER:PASSWORD@IP_ADDRESS:PORT/DATABASE"
+// }
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Formation {
+  id          Int @id @default(autoincrement())
+  name        String @unique
+  config      String @unique
+  squads      Squad[]
+}
+
+model Player {
+  id          Int @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  number      Int @unique
+  position    String
+  injured     Boolean?
+  suspended   Boolean?
+}
+
+model Squad {
+  id          Int @id @default(autoincrement())
+  formationId Int
+  formation   Formation @relation(fields: [formationId], references: [id])
+  config      String
+}
