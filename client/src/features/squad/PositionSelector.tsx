@@ -55,7 +55,7 @@ const PositionSelector = () => {
                   }}
                 >
                   <option key={0} value={undefined}>-</option>
-                  {players.map(player => <option key={player.id} value={player.id} disabled={squad.config.includes(player.id)}>{player.lastName}</option>)}
+                  {players.map(player => <option key={player.id} value={player.id} disabled={squad.config[index] !== player.id && squad.config.includes(player.id)}>{player.lastName}</option>)}
                 </Select>
               </FormControl>
             </Grid>
