@@ -14,7 +14,11 @@ import Bench from './features/squad/Bench';
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: 70,
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: 0,
+      paddingRight: 0
+    },
   },
   drawer: {
     width: 250,
