@@ -61,7 +61,7 @@ Install the dependencies of the server app:
 
 Install the dependencies of the client app:
 
-```cd client && yarn install && cd ..``
+```cd client && yarn install && cd ..```
 
 Initialise the database (SQLite is used locally):
 
