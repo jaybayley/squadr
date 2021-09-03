@@ -55,9 +55,13 @@ This solution is limited due to time constraints, and does not do the following 
 
 ## Running locally
 
-Install the dependencies of the app:
+Install the dependencies of the server app:
 
 ```yarn install```
+
+Install the dependencies of the client app:
+
+```cd client && yarn install && cd ..``
 
 Initialise the database (SQLite is used locally):
 
